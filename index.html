@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrés Académico</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #c52287;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        header .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        header .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .banner {
+            background-color: #ffe4e1;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #c52287;
+            text-align: center;
+        }
+        .banner h1 {
+            font-size: 2.5rem;
+        }
+        .contenido {
+            padding: 20px;
+            text-align: center;
+        }
+        .contenido h2 {
+            color: #c52287;
+        }
+        .seccion {
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .foro {
+            padding: 10px;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+        }
+        .foro h3 {
+            color: #c52287;
+        }
+        footer {
+            background-color: #c52287;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Estrés Académico</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#causas">Causas</a></li>
+                <li><a href="#signos">Signos de Alerta</a></li>
+                <li><a href="#foro">Foro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div>
+            <h1>Estrés Académico</h1>
+            <p>Información, causas y soluciones para un mejor bienestar.</p>
+        </div>
+    </section>
+
+    <section id="causas" class="contenido">
+        <h2>Causas del Estrés Académico</h2>
+        <div class="seccion">
+            <p>El estrés académico puede ser causado por diversas razones, como la presión por obtener buenas calificaciones, la carga excesiva de trabajo, la falta de organización y la ansiedad por los exámenes.</p>
+        </div>
+    </section>
+
+    <section id="signos" class="contenido">
+        <h2>Signos de Alerta</h2>
+        <div class="seccion">
+            <p>Algunos signos comunes de estrés incluyen fatiga extrema, dificultad para concentrarse, insomnio, irritabilidad y cambios en los hábitos alimenticios.</p>
+        </div>
+    </section>
+
+    <section id="foro" class="contenido">
+        <h2>Foro de Discusión</h2>
+        <div class="seccion foro">
+            <h3>Comparte tu experiencia</h3>
+            <p>Únete a la conversación y comparte cómo manejas el estrés académico.</p>
+            <textarea placeholder="Escribe tu comentario aquí..." rows="4" style="width:100%;"></textarea>
+            <button style="margin-top: 10px; background-color: #c52287; color: white; padding: 10px; border: none; border-radius: 5px;">Enviar</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Estrés Académico. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
