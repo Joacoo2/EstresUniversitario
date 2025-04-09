@@ -14,7 +14,7 @@
             background-color: #f7f7f7;
         }
         header {
-            background-color: #c52287;
+            background-color: #c043df;
             color: white;
             padding: 10px 20px;
             display: flex;
@@ -28,6 +28,9 @@
         header .nav-links {
             display: flex;
             gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
         header .nav-links a {
             color: white;
@@ -35,27 +38,34 @@
             font-weight: bold;
         }
         .banner {
-            background-color: #ffe4e1;
+            background-color: #e8a0d2be;
             height: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #c52287;
+            color: #c043df;
             text-align: center;
         }
         .banner h1 {
             font-size: 2.5rem;
         }
-        .contenido {
+        .contenedor-secciones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
             padding: 20px;
-            text-align: center;
+        }
+        .contenido {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
         }
         .contenido h2 {
-            color: #c52287;
+            color: #c043df;
+            text-align: center;
         }
         .seccion {
-            max-width: 800px;
-            margin: auto;
             text-align: left;
             padding: 20px;
             background: white;
@@ -64,15 +74,29 @@
             margin-bottom: 20px;
         }
         .foro {
-            padding: 10px;
             background-color: #f3f3f3;
-            border-radius: 5px;
         }
         .foro h3 {
-            color: #c52287;
+            color: #c043df;
+        }
+        .foro textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            resize: vertical;
+        }
+        .foro button {
+            margin-top: 10px;
+            background-color: #c52287;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
         footer {
-            background-color: #c52287;
+            background-color: #c043df;
             color: white;
             text-align: center;
             padding: 10px;
@@ -99,29 +123,36 @@
         </div>
     </section>
 
-    <section id="causas" class="contenido">
-        <h2>Causas del Estrés Académico</h2>
-        <div class="seccion">
-            <p>El estrés académico puede ser causado por diversas razones, como la presión por obtener buenas calificaciones, la carga excesiva de trabajo, la falta de organización y la ansiedad por los exámenes.</p>
-        </div>
-    </section>
+    <div class="contenedor-secciones">
+        <section id="causas" class="contenido">
+            <h2>Causas del Estrés Académico</h2>
+            <div class="seccion">
+                <p>El estrés académico puede ser causado por diversas razones, como la presión por obtener buenas calificaciones, la carga excesiva de trabajo, la falta de organización y la ansiedad por los exámenes.</p>
+            </div>
+        </section>
 
-    <section id="signos" class="contenido">
-        <h2>Signos de Alerta</h2>
-        <div class="seccion">
-            <p>Algunos signos comunes de estrés incluyen fatiga extrema, dificultad para concentrarse, insomnio, irritabilidad y cambios en los hábitos alimenticios.</p>
-        </div>
-    </section>
+        <section id="signos" class="contenido">
+            <h2>Signos de Alerta</h2>
+            <div class="seccion">
+                <p>Algunos signos comunes de estrés incluyen: </p>
+                <p> -Fatiga extrema </p>
+                <p> -Dificultad para concentrarse </p>
+                <p> -Insomnio </p>
+                <p> -Irritabilidad </p>
+                <p> -Cambios en los hábitos alimenticios </p>
+            </div>
+        </section>
 
-    <section id="foro" class="contenido">
-        <h2>Foro de Discusión</h2>
-        <div class="seccion foro">
-            <h3>Comparte tu experiencia</h3>
-            <p>Únete a la conversación y comparte cómo manejas el estrés académico.</p>
-            <textarea placeholder="Escribe tu comentario aquí..." rows="4" style="width:100%;"></textarea>
-            <button style="margin-top: 10px; background-color: #c52287; color: white; padding: 10px; border: none; border-radius: 5px;">Enviar</button>
-        </div>
-    </section>
+        <section id="foro" class="contenido">
+            <h2>Foro de Discusión</h2>
+            <div class="seccion foro">
+                <h3>Comparte tu experiencia</h3>
+                <p>Envíanos tu experiencia con respecto al estrés académico :)</p>
+                <textarea placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
+                <button>Enviar</button>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Estrés Académico. Todos los derechos reservados.</p>
