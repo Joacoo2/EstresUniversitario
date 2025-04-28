@@ -3,159 +3,927 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrés Académico</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Estrés Académico - Información, Causas y Soluciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cal Sans', sans-serif;;
+        }
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
+            background-color: #fff5f7;
+            color: #333;
+            line-height: 1.6;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
         header {
-            background-color: #c043df;
+            background-image: url('ruta-a-tu-imagen.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(211, 47, 47, 0.7); 
             color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px;
+            text-align: center;
+            position: relative;
         }
-        header .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
-        header .nav-links {
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 20px 0;
+            color: #cd6155;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ffcdd2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: #cd6155;
+            padding: 15px 0;
+        }
+
+        nav ul {
             display: flex;
-            gap: 15px;
+            justify-content: space-around;
             list-style: none;
-            margin: 0;
-            padding: 0;
+            flex-wrap: wrap;
         }
-        header .nav-links a {
+
+        nav ul li a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s;
         }
-        .banner {
-            background-color: #e8a0d2be;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #c043df;
-            text-align: center;
+
+        nav ul li a:hover {
+            background-color: #ec7063;
         }
-        .banner h1 {
-            font-size: 2.5rem;
-        }
-        .contenedor-secciones {
-            display: flex;
-            justify-content: center;
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
             padding: 20px;
-        }
-        .contenido {
-            flex: 1;
-            min-width: 280px;
-            max-width: 400px;
-        }
-        .contenido h2 {
-            color: #c043df;
-            text-align: center;
-        }
-        .seccion {
-            text-align: left;
-            padding: 20px;
-            background: white;
-            border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .section h3 {
+            color: #d98880;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .resource-link {
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .resource-link:hover {
+            background-color: #ffcdd2;
+        }
+
+        .resource-link a {
+            text-decoration: none;
+            color: #a7281dc5;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .warning-signs {
+            background-color: #ffecf0;
+        }
+
+        .tips-list {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+
+        .tips-list li {
+            margin-bottom: 8px;
+        }
+
+        .forum {
+            background-color: #ffeef2;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .forum-header {
+            background-color: #d98880;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
             margin-bottom: 20px;
         }
-        .foro {
-            background-color: #f3f3f3;
+        .forum-topics {
+            margin-bottom: 20px;
         }
-        .foro h3 {
-            color: #c043df;
-        }
-        .foro textarea {
-            width: 100%;
-            border: 1px solid #ccc;
+        .forum-topic {
+            background-color: white;
             border-radius: 5px;
-            padding: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .topic-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #a93226;
+            margin-bottom: 10px;
+        }
+        .topic-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .topic-author {
+            display: flex;
+            align-items: center;
+        }
+        .topic-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #d98880;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .topic-stats {
+            margin-left: auto;
+            display: flex;
+            gap: 15px;
+        }
+        .topic-stat {
+            display: flex;
+            align-items: center;
+        }
+        .topic-stat i {
+            margin-right: 5px;
+        }
+        .topic-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .topic-tag {
+            background-color: #ffebee;
+            color: #a93226;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        .topic-content {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .topic-replies {
+            margin-top: 15px;
+            border-top: 1px solid #ffcdd2;
+            padding-top: 15px;
+        }
+        .forum-reply {
+            background-color: #fff9fa;
+            border-radius: 5px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid #e91e63;
+        }
+        .reply-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .reply-avatar {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #f8bbd0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .reply-username {
+            font-weight: bold;
+            color: #a93226;
+        }
+        .reply-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-left: 10px;
+        }
+        .reply-content {
+            margin-left: 35px;
+        }
+        .reply-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 8px;
+            margin-left: 35px;
+            font-size: 0.9rem;
+        }
+        .reply-action {
+            color: #888;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .reply-action:hover {
+            color: #a93226;
+        }
+        .reply-action i {
+            margin-right: 3px;
+        }
+        .accepted-reply {
+            background-color: #f0fff4;
+            border-left-color: #4CAF50;
+        }
+        .accepted-badge {
+            background-color: #4CAF50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            margin-left: 10px;
+        }
+
+        .new-topic-form {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .form-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #a93226;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ffcdd2;
+            border-radius: 3px;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
             resize: vertical;
         }
-        .foro button {
-            margin-top: 10px;
-            background-color: #c52287;
+
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: #a93226;
             color: white;
+        }
+
+        .btn-secondary {
+            background-color: #888;
+            color: white;
+        }
+
+        .online-users {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .online-users-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #a93226;
+        }
+
+        .user-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .user-badge {
+            display: flex;
+            align-items: center;
+            background-color: #ffebee;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .user-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #d98880;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 5px;
+        }
+
+        .page-item {
+            padding: 5px 10px;
+            border: 1px solid #ffcdd2;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .page-item.active {
+            background-color: #a93226;
+            color: white;
+            border-color: #a93226;
+        }
+
+        .page-item:hover:not(.active) {
+            background-color: #ffebee;
+        }
+        .forum-comment {
+            background-color: white;
             padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-left: 3px solid #e91e63;
+        }
+
+        .forum-username {
+            font-weight: bold;
+            color: #f86a8296;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ffcdd2;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .account-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .login-form, .register-form {
+            padding: 15px;
+            border: 1px solid #ffcdd2;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #d98880;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ffcdd2;
+            border-radius: 3px;
+        }
+
+        .btn {
+            background-color: #d98880;
+            color: white;
+            padding: 10px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
+
+        .btn:hover {
+            background-color: #d98880;
+        }
+
+        .quiz-btn {
+            display: inline-block;
+            background-color: #a93226;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .quiz-btn:hover {
+            background-color: #c2185b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
         footer {
-            background-color: #c043df;
+            background-color: #d98880;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin-bottom: 5px;
+                text-align: center;
+            }
+            
+            .account-section {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Estrés Académico</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#causas">Causas</a></li>
-                <li><a href="#signos">Signos de Alerta</a></li>
-                <li><a href="#foro">Foro</a></li>
-            </ul>
-        </nav>
+        <h1><b>Estrés académico</b></h1>
+        <p class="subtitle">Información, causas y soluciones</p>
     </header>
 
-    <section class="banner">
-        <div>
-            <h1>Estrés Académico</h1>
-            <p>Información, causas y soluciones para un mejor bienestar.</p>
-        </div>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#foro">Foro</a></li>
+            <li><a href="#consejos">Consejos</a></li>
+            <li><a href="#cuenta" id="login-btn">Log In</a></li>
+            <li><a href="#cuenta" id="signup-btn">Sign Up</a></li>
+            <li><a href="#" id="logout-btn" style="display:none;">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
 
-    <div class="contenedor-secciones">
-        <section id="causas" class="contenido">
-            <h2>Causas del Estrés Académico</h2>
-            <div class="seccion">
+    <div class="container">
+        <div class="main-content">
+            <div class="section">
+                <h3>CAUSAS</h3>
                 <p>El estrés académico puede ser causado por diversas razones, como la presión por obtener buenas calificaciones, la carga excesiva de trabajo, la falta de organización y la ansiedad por los exámenes.</p>
+                <div class="resource-links">
+                    <div class="resource-link">
+                        <a href="https://www.youtube.com/watch?v=P21av6o-qVY">Video: Estrés ¿Causas?</a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.youtube.com/watch?v=8zVyYBEKtoU">Video: Causas y consecuencias del estrés académico
+                        </a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.youtube.com/watch?v=rF-Vw2uR1LQ">¿Qué es el estrés académico? con el Dr. Alejandro Lanuque
+                        </a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.mariajesuscampos.es/el-estres-academico-causas/">Blog: Estrés académico: Causas</a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://revmultimed.sld.cu/index.php/mtm/article/view/302/410">Artículo: Estrés académico: causas y consecuencias</a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://uchile.cl/presentacion/centro-de-aprendizaje-campus-sur/Material-Autorregulacion-Emocional/reconocer-prevenir-y-afrontar-el-estres-academico">Reconocer, prevenir y afrontar el estrés académico
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <section id="signos" class="contenido">
-            <h2>Signos de Alerta</h2>
-            <div class="seccion">
-                <p>Algunos signos comunes de estrés incluyen: </p>
-                <p> -Fatiga extrema </p>
-                <p> -Dificultad para concentrarse </p>
-                <p> -Insomnio </p>
-                <p> -Irritabilidad </p>
-                <p> -Cambios en los hábitos alimenticios </p>
+            <div class="section warning-signs">
+                <h3>SIGNOS DE ALERTA</h3>
+                <a href="https://porquequieroestarbien.com/test/test-de-estres" class="quiz-btn">Toma el quiz para detectar signos de alerta</a>
+                <p>Los signos de estrés académico incluyen dificultad para concentrarse, insomnio, fatiga, ansiedad, irritabilidad y disminución en el rendimiento</p>
+                <div class="resource-links">
+                    <div class="resource-link">
+                        <a href="https://youtu.be/q9tM64Meyj0">Señales de alerta escolar</a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.youtube.com/watch?v=hP1kbyK39-A">Los síntomas físicos más comunes de la ansiedad y el estrés 🤯
+                        </a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.youtube.com/watch?v=Ox7_4rNkLHk">Así afecta el ESTRÉS a nuestro CUERPO
+                        </a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.youtube.com/watch?v=xzk-frBs9ro">Síntomas del estrés
+                        </a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://youtu.be/X-T6Dqqy8gQ">10 signos que tu cuerpo tiene mucho estrés - Dr. Carlos Jaramillo
+                        </a>
+                    </div>
+                    <div class="resource-link">
+                        <a href="https://www.youtube.com/watch?v=ewtMyjjuaRY">👉¿Estrés académico? 😕
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section id="foro" class="contenido">
-            <h2>Foro de Discusión</h2>
-            <div class="seccion foro">
-                <h3>Comparte tu experiencia</h3>
-                <p>Envíanos tu experiencia con respecto al estrés académico :)</p>
-                <textarea placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
-                <button>Enviar</button>
+        <div class="section" id="consejos">
+            <h3>CONSEJOS</h3>
+            <ol class="tips-list">
+                <li>Organiza tu tiempo.</li>
+                <li>Haz ejercicio.</li>
+                <li>Duerme bien.</li>
+                <li>Mantén una dieta equilibrada.</li>
+                <li>Pide ayuda.</li>
+                <li>Practica técnicas de relajación.</li>
+                <li>Establece metas pequeñas y alcanzables.</li>
+                <li>Mantén un equilibrio.</li>
+                <li>Habla sobre tus preocupaciones.</li>
+                <li>Evita la procrastinación.</li>
+            </ol>
+        </div>
+
+        <div class="section forum" id="foro">
+            <h3>FORO DE DISCUSIÓN</h3>
+            <div class="forum-header">
+                <p>¡Bienvenido a nuestra comunidad! Comparte tus experiencias, haz preguntas y ayuda a otros estudiantes que están lidiando con el estrés académico.</p>
             </div>
-        </section>
+            
+            <div class="forum-actions">
+                <button class="btn btn-primary" id="new-topic-btn">
+                    <i class="fas fa-plus"></i> Nuevo Tema
+                </button>
+            </div>
+            
+            <div class="forum-topics">
+                <!-- Tema 1 -->
+                <div class="forum-topic">
+                    <div class="topic-title">¿Cómo manejar el estrés antes de los exámenes finales?</div>
+                    <div class="topic-meta">
+                        <div class="topic-author">
+                            <div class="topic-avatar">MA</div>
+                            <span>María Alejandra</span>
+                        </div>
+                        <div class="topic-stats">
+                            <div class="topic-stat">
+                                <i class="far fa-comment"></i> 8 respuestas
+                            </div>
+                            <div class="topic-stat">
+                                <i class="far fa-eye"></i> 124 vistas
+                            </div>
+                            <div class="topic-stat">
+                                <i class="far fa-clock"></i> 2 días atrás
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-content">
+                        Estoy en época de exámenes finales y siento que la ansiedad me está afectando mucho. ¿Alguien tiene técnicas efectivas para mantener la calma y concentrarse mejor durante los exámenes?
+                    </div>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Exámenes</span>
+                        <span class="topic-tag">Ansiedad</span>
+                        <span class="topic-tag">Técnicas</span>
+                    </div>
+                    
+                    <div class="topic-replies">
+                        <div class="forum-reply">
+                            <div class="reply-header">
+                                <div class="reply-avatar">JP</div>
+                                <span class="reply-username">Juan Pérez</span>
+                                <span class="reply-date">Hace 1 día</span>
+                            </div>
+                            <div class="reply-content">
+                                A mí me ayuda mucho la técnica Pomodoro: estudio 25 minutos y descanso 5. También recomiendo hacer respiraciones profundas antes de empezar el examen.
+                            </div>
+                            <div class="reply-actions">
+                                <div class="reply-action">
+                                    <i class="far fa-thumbs-up"></i> 12
+                                </div>
+                                <div class="reply-action">
+                                    <i class="fas fa-reply"></i> Responder
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="forum-reply accepted-reply">
+                            <div class="reply-header">
+                                <div class="reply-avatar">LC</div>
+                                <span class="reply-username">Laura Camila</span>
+                                <span class="reply-date">Hace 18 horas</span>
+                                <span class="accepted-badge">Respuesta aceptada</span>
+                            </div>
+                            <div class="reply-content">
+                                Yo sufro mucho de ansiedad en exámenes y lo que mejor me funciona es:
+                                <ol>
+                                    <li>Prepararme bien con tiempo (nada de dejar todo para última hora)</li>
+                                    <li>La noche antes dormir al menos 7 horas</li>
+                                    <li>Llevar agua y algún snack ligero</li>
+                                    <li>Si me bloqueo, saltar esa pregunta y volver después</li>
+                                </ol>
+                                También ayuda mucho practicar con exámenes viejos para familiarizarse con el formato.
+                            </div>
+                            <div class="reply-actions">
+                                <div class="reply-action">
+                                    <i class="far fa-thumbs-up"></i> 24
+                                </div>
+                                <div class="reply-action">
+                                    <i class="fas fa-reply"></i> Responder
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Más respuestas podrían ir aquí -->
+                    </div>
+                    
+                    <div class="reply-form">
+                        <div class="form-group">
+                            <textarea class="comment-input" placeholder="Escribe tu respuesta..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-secondary">Cancelar</button>
+                            <button class="btn btn-primary">Publicar respuesta</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tema 2 -->
+                <div class="forum-topic">
+                    <div class="topic-title">Consejos para organizar el tiempo con múltiples proyectos</div>
+                    <div class="topic-meta">
+                        <div class="topic-author">
+                            <div class="topic-avatar">CR</div>
+                            <span>Carlos Rodríguez</span>
+                        </div>
+                        <div class="topic-stats">
+                            <div class="topic-stat">
+                                <i class="far fa-comment"></i> 5 respuestas
+                            </div>
+                            <div class="topic-stat">
+                                <i class="far fa-eye"></i> 87 vistas
+                            </div>
+                            <div class="topic-stat">
+                                <i class="far fa-clock"></i> 5 días atrás
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topic-content">
+                        Tengo 3 proyectos grandes que entregar en las próximas 2 semanas y siento que no voy a poder con todo. ¿Qué métodos de organización usan cuando tienen múltiples tareas importantes?
+                    </div>
+                    <div class="topic-tags">
+                        <span class="topic-tag">Organización</span>
+                        <span class="topic-tag">Tiempo</span>
+                        <span class="topic-tag">Proyectos</span>
+                    </div>
+                    
+                    <!-- Respuestas podrían ir aquí -->
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <div class="page-item active">1</div>
+                <div class="page-item">2</div>
+                <div class="page-item">3</div>
+                <div class="page-item">...</div>
+                <div class="page-item">10</div>
+                <div class="page-item"><i class="fas fa-chevron-right"></i></div>
+            </div>
+            
+            <!-- Formulario para nuevo tema (oculto inicialmente) -->
+            <div class="new-topic-form" id="new-topic-form" style="display: none;">
+                <div class="form-title">Crear nuevo tema de discusión</div>
+                <div class="form-group">
+                    <label for="topic-title">Título del tema</label>
+                    <input type="text" id="topic-title" placeholder="Escribe un título claro y descriptivo">
+                </div>
+                <div class="form-group">
+                    <label for="topic-content">Contenido</label>
+                    <textarea id="topic-content" placeholder="Describe tu pregunta, experiencia o tema de discusión con detalle"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="topic-tags">Etiquetas (separadas por comas)</label>
+                    <input type="text" id="topic-tags" placeholder="Ej: exámenes, ansiedad, organización">
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-secondary" id="cancel-topic-btn">Cancelar</button>
+                    <button class="btn btn-primary">Publicar tema</button>
+                </div>
+            </div>
+            
+            <div class="online-users">
+                <div class="online-users-title">
+                    <i class="fas fa-users"></i> Usuarios en línea (24)
+                </div>
+                <div class="user-list">
+                    <div class="user-badge">
+                        <div class="user-avatar">MA</div>
+                        María A.
+                    </div>
+                    <div class="user-badge">
+                        <div class="user-avatar">JP</div>
+                        Juan P.
+                    </div>
+                    <div class="user-badge">
+                        <div class="user-avatar">LC</div>
+                        Laura C.
+                    </div>
+                    <div class="user-badge">
+                        <div class="user-avatar">CR</div>
+                        Carlos R.
+                    </div>
+                    <div class="user-badge">
+                        <div class="user-avatar">+20</div>
+                        más...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section" id="cuenta">
+            <h3>MI CUENTA</h3>
+            <div class="account-section">
+                <div class="register-form">
+                    <p>¿Aún no te has registrado? ¡Crea tu cuenta en cuestión de segundos!</p>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Nombre de usuario:</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <button class="btn">Registrarse</button>
+                </div>
+
+                <div class="login-form">
+                    <p>¿Ya tienes tu cuenta? Inicia sesión ahora</p>
+                    <div class="form-group">
+                        <label for="login-username">Usuario:</label>
+                        <input type="text" id="login-username" name="login-username">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña:</label>
+                        <input type="password" id="login-password" name="login-password">
+                    </div>
+                    <button class="btn">Iniciar sesión</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Estrés Académico. Todos los derechos reservados.</p>
+        <p>&copy; 2025 - Estrés Académico</p>
     </footer>
+
+    <script>
+        // Script básico para manejar el estado de login
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('login-btn');
+            const signupBtn = document.getElementById('signup-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            
+           // Simular login (en una aplicación real esto sería con autenticación real)
+           document.querySelector('.login-form .btn').addEventListener('click', function() {
+                loginBtn.style.display = 'none';
+                signupBtn.style.display = 'none';
+                logoutBtn.style.display = 'block';
+                document.querySelector('#cuenta h3').textContent = 'Bienvenido';
+            });
+            
+            // Simular logout
+            logoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginBtn.style.display = 'block';
+                signupBtn.style.display = 'block';
+                logoutBtn.style.display = 'none';
+                document.querySelector('#cuenta h3').textContent = 'MI CUENTA';
+            });
+            
+            // Scroll a la sección de cuenta para login/signup
+            loginBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.login-form').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            signupBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.register-form').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Nuevo script para funcionalidad del foro
+            const newTopicBtn = document.getElementById('new-topic-btn');
+            const newTopicForm = document.getElementById('new-topic-form');
+            const cancelTopicBtn = document.getElementById('cancel-topic-btn');
+
+            // Mostrar/ocultar formulario de nuevo tema
+            newTopicBtn.addEventListener('click', function() {
+                newTopicForm.style.display = 'block';
+                newTopicBtn.style.display = 'none';
+                newTopicForm.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            cancelTopicBtn.addEventListener('click', function() {
+                newTopicForm.style.display = 'none';
+                newTopicBtn.style.display = 'block';
+            });
+
+            // Simular "me gusta" en respuestas
+            document.querySelectorAll('.reply-action').forEach(action => {
+                if (action.querySelector('.fa-thumbs-up')) {
+                    action.addEventListener('click', function() {
+                        const countElement = action.querySelector('i').nextSibling;
+                        let count = parseInt(countElement.nodeValue.trim());
+                        countElement.nodeValue = ' ' + (count + 1);
+                        action.style.color = '#a93226';
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
